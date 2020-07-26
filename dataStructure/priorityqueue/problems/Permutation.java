@@ -31,7 +31,7 @@ public class Permutation {
       Integer pq2 = PQ2.removeMin();
 
       while (!PQ1.empty()) {
-        if (pq1 != pq2) {
+        if (!C.isEqualTo(pq1, pq2)) {
           return false;
         }
         pq1 = PQ1.removeMin();
