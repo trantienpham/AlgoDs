@@ -108,6 +108,22 @@ public class DoubleLinkedList<T> implements List<T> {
   public boolean empty() {
     return header.getNext() == null && tailer.getPrev() == null;
   }
+
+  @Override
+  public String toString() {
+    StringBuilder builder = new StringBuilder();
+    if (!empty()) {
+      Position<T> p = first();
+      builder.append("[");
+      while (p != tailer) {
+        builder.append(p.element() + ", ");
+        p = after(p);
+      }
+      builder.delete(builder.length() - 2, builder.length());
+      builder.append("]");
+    }
+    return builder.toString();
+  }
 }
 
 /**
