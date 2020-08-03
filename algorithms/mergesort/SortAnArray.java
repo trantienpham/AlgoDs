@@ -98,4 +98,23 @@ Algorithm merge(A, lo, mid, hi, S)
   for i <- 0 to size do
     A[lo + i] <- S[i]
 
+Algorithm mergeSort(S)
+  if S.size() > 1 then
+    (S1, S2) <- partition(S, n/2)
+    mergeSort(S1)
+    mergeSort(S2)
+    merge(S1, S2, S)
+
+Algorithm merge(S1, S2, S)
+  while !S1.empty() /\ S2.empty() do
+    if B.first().element() < A.first().element() then
+      S.insertLast(B.remove(B.first()))
+    else
+      S.insertLast(A.remove(A.first()))
+  
+  while !A.empty() do
+    S.insertLast(A.remove(A.first()))
+
+  while !B.empty() do
+    S.insertLast(B.remove(B.first()))
 */
